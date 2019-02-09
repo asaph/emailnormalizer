@@ -10,6 +10,7 @@ class EmailNormalizerTest {
     @Test
     void testNormalizeEmail() {
         assertEquals("thisis@gmail.com", normalizeEmail("this.is+a.test@gmail.com"));
+        assertEquals("thisis@gmail.com", normalizeEmail("this.is+a.test@GMAIL.COM"));
         String email = "this.is+a.test@example.com";
         assertSame(email, normalizeEmail(email));
     }

@@ -22,7 +22,7 @@ public class EmailNormalizer {
         if (atPosition == -1) {
             return null;
         }
-        return emailAddress.substring(atPosition + 1);
+        return emailAddress.substring(atPosition + 1).toLowerCase();
     }
 
     static String getUsername(String emailAddress) {
