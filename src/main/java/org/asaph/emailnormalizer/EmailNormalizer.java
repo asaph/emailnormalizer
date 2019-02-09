@@ -10,11 +10,11 @@ public class EmailNormalizer {
         DOMAIN_NORMALIZER_MAP.put("gmail.com", new GmailNormalizer());
     }
 
-    public String normalize(String emailAddress) {
+    String normalize(String emailAddress) {
         return emailAddress;
     }
 
-    public static String getDomain(String emailAddress) {
+    static String getDomain(String emailAddress) {
         int atPosition = emailAddress.lastIndexOf('@');
         if (atPosition == -1) {
             return null;
@@ -22,7 +22,7 @@ public class EmailNormalizer {
         return emailAddress.substring(atPosition + 1);
     }
 
-    public static String getUsername(String emailAddress) {
+    static String getUsername(String emailAddress) {
         int atPosition = emailAddress.lastIndexOf('@');
         if (atPosition == -1) {
             return emailAddress;

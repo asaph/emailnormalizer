@@ -1,11 +1,11 @@
 package org.asaph.emailnormalizer;
 
-public class GmailNormalizer extends EmailNormalizer {
+class GmailNormalizer extends EmailNormalizer {
     public String normalize(String emailAddress) {
         return stripDotAddress(stripPlusAddress(emailAddress));
     }
 
-    public static String stripPlusAddress(String emailAddress) {
+    static String stripPlusAddress(String emailAddress) {
         String domain = getDomain(emailAddress);
         String username = getUsername(emailAddress);
         int plusPosition = username.indexOf('+');
@@ -15,7 +15,7 @@ public class GmailNormalizer extends EmailNormalizer {
         return username.substring(0, plusPosition) + '@' + domain;
     }
 
-    public static String stripDotAddress(String emailAddress) {
+    static String stripDotAddress(String emailAddress) {
         String domain = getDomain(emailAddress);
         String username = getUsername(emailAddress);
         return username.replace(".", "") + '@' + domain;
