@@ -13,11 +13,11 @@ class GmailNormalizerTest {
 
     @Test
     void testStripPlusAddress() {
-        assertEquals("this.is@gmail.com", new GmailNormalizer().stripPlusAddress("this.is+a.test@gmail.com"));
+        assertEquals("this.is@gmail.com", GmailNormalizer.stripPlusAddress("this.is+a.test@gmail.com"));
     }
 
     @Test
     void testStripDotAddress() {
-        assertEquals("thisisatest@gmail.com", new GmailNormalizer().stripDotAddress("this.is.a.test@gmail.com"));
+        assertEquals("thisisatest@gmail.com", GmailNormalizer.stripDotAddress("this.is.a.test@gmail.com"));
     }
 }

@@ -5,7 +5,7 @@ public class GmailNormalizer extends EmailNormalizer {
         return stripDotAddress(stripPlusAddress(emailAddress));
     }
 
-    public String stripPlusAddress(String emailAddress) {
+    public static String stripPlusAddress(String emailAddress) {
         String domain = getDomain(emailAddress);
         String username = getUsername(emailAddress);
         int plusPosition = username.indexOf('+');
@@ -15,7 +15,7 @@ public class GmailNormalizer extends EmailNormalizer {
         return username.substring(0, plusPosition) + '@' + domain;
     }
 
-    public String stripDotAddress(String emailAddress) {
+    public static String stripDotAddress(String emailAddress) {
         String domain = getDomain(emailAddress);
         String username = getUsername(emailAddress);
         return username.replace(".", "") + '@' + domain;
