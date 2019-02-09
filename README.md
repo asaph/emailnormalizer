@@ -1,5 +1,5 @@
 Email Normalizer
---
+==
 
 This library normalizes email addresses. Some providers allow users to modify their email addresses
 in ways that make them appear to be different addresses when in fact they still deliver to the same
@@ -13,7 +13,7 @@ mail to the same address.
 2. A `+` followed by an arbitrary suffix may be appended to the username portion of any Gmail email address. e.g. Email sent to `abc+def@gmail.com` gets delivered to the same mailbox as email sent to `abc@gmail.com`.
 
 Usage:
-
+--
 ```java
 import static org.asaph.emailnormalizer.EmailNormalizer.*;
 
