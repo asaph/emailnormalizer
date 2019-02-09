@@ -12,16 +12,6 @@ class GmailNormalizerTest {
     }
 
     @Test
-    void testGetDomain() {
-        assertEquals("gmail.com", new GmailNormalizer().getDomain("this.is.a.test@gmail.com"));
-    }
-
-    @Test
-    void testGetUsername() {
-        assertEquals("this.is.a.test", new GmailNormalizer().getUsername("this.is.a.test@gmail.com"));
-    }
-
-    @Test
     void testStripPlusAddress() {
         assertEquals("this.is@gmail.com", new GmailNormalizer().stripPlusAddress("this.is+a.test@gmail.com"));
     }

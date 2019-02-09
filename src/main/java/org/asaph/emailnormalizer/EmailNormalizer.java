@@ -10,4 +10,20 @@ public abstract class EmailNormalizer {
     }
 
     public abstract String normalize(String emailAddress);
+
+    public static String getDomain(String emailAddress) {
+        int atPosition = emailAddress.lastIndexOf('@');
+        if (atPosition == -1) {
+            return null;
+        }
+        return emailAddress.substring(atPosition + 1);
+    }
+
+    public static String getUsername(String emailAddress) {
+        int atPosition = emailAddress.lastIndexOf('@');
+        if (atPosition == -1) {
+            return emailAddress;
+        }
+        return emailAddress.substring(0, atPosition);
+    }
 }
