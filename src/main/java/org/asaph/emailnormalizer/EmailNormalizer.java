@@ -3,13 +3,16 @@ package org.asaph.emailnormalizer;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class EmailNormalizer {
-    public final static Map<String, EmailNormalizer> DOMAIN_NORMALIZER_MAP = new HashMap<>();
+public class EmailNormalizer {
+    private final static EmailNormalizer DEFAULT_NORMALIZER = new EmailNormalizer();
+    private final static Map<String, EmailNormalizer> DOMAIN_NORMALIZER_MAP = new HashMap<>();
     static {
         DOMAIN_NORMALIZER_MAP.put("gmail.com", new GmailNormalizer());
     }
 
-    public abstract String normalize(String emailAddress);
+    public String normalize(String emailAddress) {
+        return emailAddress;
+    }
 
     public static String getDomain(String emailAddress) {
         int atPosition = emailAddress.lastIndexOf('@');

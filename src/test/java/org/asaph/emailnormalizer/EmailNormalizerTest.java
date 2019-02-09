@@ -7,6 +7,12 @@ import org.junit.jupiter.api.Test;
 class EmailNormalizerTest {
 
     @Test
+    void testNormalize() {
+        String email = "this.is+a.test@example.com";
+        assertSame(email, new EmailNormalizer().normalize(email));
+    }
+
+    @Test
     void testGetDomain() {
         assertEquals("gmail.com", EmailNormalizer.getDomain("this.is.a.test@gmail.com"));
     }
