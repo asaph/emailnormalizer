@@ -1,6 +1,6 @@
 package org.asaph.emailnormalizer;
 
-public class GmailNormalizer implements EmailNormalizer {
+public class GmailNormalizer extends EmailNormalizer {
     public String normalize(String emailAddress) {
         return stripDotAddress(stripPlusAddress(emailAddress));
     }
