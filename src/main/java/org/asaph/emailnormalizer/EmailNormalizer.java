@@ -10,6 +10,9 @@ public class EmailNormalizer {
         DOMAIN_NORMALIZER_MAP.put("gmail.com", new GmailNormalizer());
     }
 
+    EmailNormalizer() {
+    }
+
     String normalize(String emailAddress) {
         return emailAddress;
     }
