@@ -32,4 +32,10 @@ public class EmailNormalizer {
         }
         return emailAddress.substring(0, atPosition);
     }
+
+    public static String normalizeEmail(String emailAddress) {
+        String domain = getDomain(emailAddress);
+        EmailNormalizer normalizer = DOMAIN_NORMALIZER_MAP.getOrDefault(domain, DEFAULT_NORMALIZER);
+        return normalizer.normalize(emailAddress);
+    }
 }
